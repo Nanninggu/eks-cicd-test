@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: noticd-board
-  namespace: noticd-board
+  name: notice-board
+  namespace: notice-board
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: noticd-board
+      app: notice-board
   template:
     metadata:
       labels:
-        app: noticd-board
+        app: notice-board
     spec:
       containers:
-        - name: noticd-board
+        - name: notice-board
           image: AWS_ECR_URI
           ports:
             - containerPort: 80
