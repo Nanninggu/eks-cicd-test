@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: noticd-board
+  namespace: noticd-board
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: noticd-board
+  template:
+    metadata:
+      labels:
+        app: noticd-board
+    spec:
+      containers:
+        - name: noticd-board
+          image: AWS_ECR_URI
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          env:
+            - name: DATE
+              value: 'DATE_STRING'
