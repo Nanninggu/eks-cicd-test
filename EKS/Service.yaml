@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: notice-board
+  namespace: notice-board
 spec:
   ports:
-    - name: "8080"
-      port: 8080
+    - port: 8080
       targetPort: 8080
   selector:
-    app: eks
+    app: notice-board
   type: LoadBalancer
